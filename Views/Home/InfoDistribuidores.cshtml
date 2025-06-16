@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Distribuidores Reconocidos";
+}
+
+<h2 class="text-primary">Distribuidores Reconocidos</h2>
+
+<!-- Pestañas personalizadas sin Bootstrap -->
+<style>
+    .tab-container {
+        margin-top: 20px;
+    }
+
+    .tab-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .tab-button {
+        padding: 10px 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+    .tab-button.active {
+        background-color: #ccc;
+        font-weight: bold;
+    }
+
+    .tab-content {
+        display: none;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+</style>
+
+<div class="tab-container">
+    <div class="tab-buttons">
+        <button class="tab-button active" onclick="showTab(0)">Gloria </button>
+        <button class="tab-button" onclick="showTab(1)">Alicorp </button>
+        <button class="tab-button" onclick="showTab(2)">Amazon </button>
+    </div>
+
+    <div class="tab-content active">
+        <img src="https://corporacionliderperu.com/50720-large_default/gloria-leche-tarro-azul-gde-x-390-gr.jpg" alt="Leche Gloria" width="250" />
+        <h4>🥛 Gloria S.A. (Distribuidora Nacional)</h4>
+        <p>
+            Gloria es una empresa peruana líder en la producción y distribución de productos lácteos desde 1941.
+            Sus productos llegan a todo el Perú, incluyendo zonas rurales, gracias a su extensa red logística.
+        </p>
+       
+        <h5 class="mt-3">🎥 Video</h5>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jQpAHZlRbCE" title="Distribución Gloria Perú" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="tab-content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Alicorp.svg" alt="Logo Alicorp" width="200" />
+        <h4>🍽️ Alicorp S.A.A. (Distribuidora Nacional)</h4>
+        <p>
+            Alicorp es una empresa peruana que fabrica y distribuye productos de consumo masivo como alimentos y artículos de limpieza.
+            Tiene presencia en más de 20 países y cuenta con una de las redes logísticas más avanzadas de América Latina.
+        </p>
+       
+        <h5 class="mt-3">🎥 Video</h5>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NLsMFppqgk0" title="Distribución Alicorp" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="tab-content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Logo Amazon" width="200" />
+        <h4>📦 Amazon ( Distribuidora Internacional)</h4>
+        <p>
+            Amazon es uno de los mayores distribuidores del mundo. Su éxito se basa en centros logísticos robotizados, inteligencia artificial y envíos en tiempo récord.
+            Opera a nivel global y entrega millones de productos cada día.
+        </p>
+       
+        <h5 class="mt-3">🎥 Video</h5>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fzdkzkOEUaM" title="Logística de Amazon" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Script para pestañas -->
+<script>
+    function showTab(index) {
+        const buttons = document.querySelectorAll('.tab-button');
+        const contents = document.querySelectorAll('.tab-content');
+
+        buttons.forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+            contents[i].classList.toggle('active', i === index);
+        });
+    }
+</script>
